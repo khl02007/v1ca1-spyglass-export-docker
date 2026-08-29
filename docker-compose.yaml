@@ -7,11 +7,13 @@ services:
       dockerfile: Docker_hub.Dockerfile
     container_name: hub
     env_file: .env
+    environment:
+      SPYGLASS_BASE_DIR: /home/jovyan/data
     ports:
-      - "8888:8888"
+      - "127.0.0.1:8888:8888"
     volumes:
       - conda:/opt/conda
-      - notebooks:/home/joyvan/notebooks
+      - notebooks:/home/jovyan/notebooks
     depends_on:
       - db
 
@@ -27,7 +29,7 @@ services:
     container_name: db
     env_file: .env
     ports:
-      - "3306:3306"
+      - "127.0.0.1:3306:3306"
     volumes:
       - ./config/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
       - db_data:/var/lib/mysql
@@ -43,4 +45,3 @@ volumes: # Docker managed mappings.
   conda: # Saves time declaring env
   notebooks: # Saves user notebook edits
   db_data: # Allows persistent db data
-
