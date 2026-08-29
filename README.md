@@ -15,6 +15,20 @@ This repository is intended to be used with the
 [Docker](https://www.docker.com/) to create and share a reproducible
 environment for replicating a paper's analyses.
 
+## v1ca1 release
+
+This fork reproduces Figures 1–4 and Supplementary Figures 1–8 for the
+V1–CA1 project using the following fixed data release:
+
+- Dandiset: [DANDI:001958, version
+  0.260829.0404](https://dandiarchive.org/dandiset/001958/0.260829.0404)
+- DOI: [10.48324/dandi.001958/0.260829.0404](https://doi.org/10.48324/dandi.001958/0.260829.0404)
+- Hub image: `khl02007/spyglass-hub-kyu_v1ca1:latest`
+- Database image: `khl02007/spyglass-db-kyu_v1ca1:latest`
+
+The figure notebook pins all reads from DANDI:001958 to the published version
+above and records it in the figure-generation manifest.
+
 ## Quick Start
 
 1. Pre-requisites: `make` and `docker`.
